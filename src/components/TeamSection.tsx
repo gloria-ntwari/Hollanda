@@ -2,6 +2,13 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
+import client1 from "../assets/Rectangle 326.png";
+import client2 from "../assets/Rectangle 326 (1).png";
+import client3 from "../assets/Rectangle 326 (2).png";
+import client4 from "../assets/Rectangle 326 (3).png";
+import client5 from "../assets/Rectangle 326 (4).png";
+
+
 
 const TeamSection = () => {
   const [ref, inView] = useInView({
@@ -15,22 +22,22 @@ const TeamSection = () => {
     {
       name: "Smith Johnson",
       role: "Director",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+      image: client1
     },
     {
       name: "John Doe",
       role: "CEO",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+      image: client2
     },
     {
       name: "Harry Bails",
       role: "Manager",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face"
+      image: client3
     },
     {
       name: "Sarah Wilson",
       role: "Operations Lead",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face"
+      image: client4
     },
     {
       name: "Michael Chen",
@@ -116,7 +123,7 @@ const TeamSection = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="flex-shrink-0 group cursor-pointer"
             >
-              <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 overflow-hidden w-72">
+              <div className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 overflow-hidden w-72">
                 {/* Image Container with Orange Accent */}
                 <div className="relative overflow-hidden">
                   <img

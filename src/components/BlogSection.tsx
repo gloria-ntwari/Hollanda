@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ArrowRight } from "lucide-react";
-import blogImage from "@/assets/blog-placeholder.jpg";
+import blogImage from "../assets/Rectangle 4.png";
 import { Button } from "@/components/ui/button";
 
 const BlogSection = () => {
