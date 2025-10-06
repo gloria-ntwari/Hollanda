@@ -13,7 +13,7 @@ const PillarsSection = () => {
       icon: Award,
       title: "QUALITY FIRST",
       description:
-        "We craft delicious, affordable snacks with the highest standards of hygiene and care, setting the bar for excellence in our industry.",
+        "We craft delicious, affordable snacks with the highest standards of hygiene and care, setting the bar for excellence in East Africa.",
     },
     {
       icon: Users,

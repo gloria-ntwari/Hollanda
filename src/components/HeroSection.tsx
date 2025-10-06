@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/Rectangle 325.png";
 
 const HeroSection = () => {
   const [ref, inView] = useInView({

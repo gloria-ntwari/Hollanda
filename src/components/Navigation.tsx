@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import navImage from "../assets/Adobe Express - file 1.png"
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,12 +35,13 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center space-x-2">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-2xl font-bold text-primary-foreground">H</span>
+            <div className="items-center justify-center">
+              <img
+                src={navImage}
+                alt="logo"
+                className="h-10 md:h-14 lg:h-18 w-auto object-contain"
+              />
             </div>
-            <span className="text-xl font-bold text-foreground hidden sm:block">
-              Hollanda
-            </span>
           </a>
 
           {/* Desktop Navigation */}

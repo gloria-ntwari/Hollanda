@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import productWinnaz from "@/assets/product-winnaz.jpg";
-import productWheeliez from "@/assets/product-wheeliez.jpg";
+import productWinnaz from "../assets/Rectangle 1.png";
+import productWheeliez from "../assets/image 1.png";
+import winnaz from "../assets/Mask group.png";
+import wheeliez from "../assets/Clip path group.png";
+
 
 const ProductsSection = () => {
   const [ref, inView] = useInView({
@@ -22,11 +25,8 @@ const ProductsSection = () => {
           className="text-center mb-16"
         >
           <p className="text-primary text-lg font-semibold mb-2">
-            EXPLORER
+            EXPLORER <span className=" text-black">A SELECTION OF OUR PRODUCTS</span>
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold">
-            A SELECTION OF OUR PRODUCTS
-          </h2>
         </motion.div>
 
         {/* Product logos */}
@@ -34,15 +34,21 @@ const ProductsSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-wrap justify-center items-center gap-12 mb-20"
+          className="flex flex-wrap justify-center items-center gap-16 mb-20"
         >
-          <div className="text-6xl md:text-7xl font-black text-primary">
-            WINNAZ
+          <div className="flex-shrink-0">
+            <img
+              src={winnaz}
+              alt="Winnaz"
+              className="h-20 md:h-24 lg:h-32 w-auto object-contain"
+            />
           </div>
-          <div className="text-6xl md:text-7xl font-black text-primary" style={{
-            textShadow: "3px 3px 0 hsl(var(--foreground))"
-          }}>
-            WHEELIEZ
+          <div className="flex-shrink-0">
+            <img
+              src={wheeliez}
+              alt="Wheeliez"
+              className="h-20 md:h-24 lg:h-28 w-auto object-contain"
+            />
           </div>
         </motion.div>
 
