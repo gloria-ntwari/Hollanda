@@ -132,7 +132,7 @@ const TeamSection = () => {
                     className="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                   {/* Orange Accent Bar */}
-                  <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-orange-400 to-orange-500"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-primary to-orange-500"></div>
 
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -143,7 +143,7 @@ const TeamSection = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
                     {member.name}
                   </h3>
-                  <p className="text-orange-500 font-semibold text-sm uppercase tracking-wide">
+                  <p className="text-primary font-semibold text-sm uppercase tracking-wide">
                     {member.role}
                   </p>
                 </div>

@@ -37,14 +37,14 @@ All colors MUST be HSL.
     --ring: 6 93% 64%;
 
     --radius: 0.75rem;
-    
+
     --gradient-hero: linear-gradient(135deg, hsl(6 93% 64%) 0%, hsl(15 90% 58%) 100%);
     --gradient-dark: linear-gradient(135deg, hsl(220 26% 8%) 0%, hsl(220 20% 12%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(43 100% 50%) 0%, hsl(38 100% 55%) 100%);
-    
+
     --shadow-elegant: 0 10px 40px -10px hsl(6 93% 64% / 0.3);
     --shadow-soft: 0 4px 20px -2px hsl(220 13% 13% / 0.1);
-    
+
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
@@ -112,7 +112,7 @@ All colors MUST be HSL.
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "kern";
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
@@ -120,29 +120,33 @@ All colors MUST be HSL.
 
 @layer utilities {
   .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-12 md:py-16 lg:py-20;
   }
-  
+
+  .section-padding-compact {
+    @apply py-8 md:py-12 lg:py-16;
+  }
+
   .container-custom {
     @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .text-gradient {
     @apply bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent;
   }
-  
+
   .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out forwards;
   }
-  
+
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out forwards;
   }
-  
+
   .animate-slide-in-left {
     animation: slideInLeft 0.6s ease-out forwards;
   }
-  
+
   .animate-slide-in-right {
     animation: slideInRight 0.6s ease-out forwards;
   }
@@ -153,6 +157,7 @@ All colors MUST be HSL.
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -163,6 +168,7 @@ All colors MUST be HSL.
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -173,6 +179,7 @@ All colors MUST be HSL.
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -184,6 +191,7 @@ All colors MUST be HSL.
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);

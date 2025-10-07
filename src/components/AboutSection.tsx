@@ -18,7 +18,7 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="mb-16"
+          className="mb-12"
         >
           <img
             src={aboutImage}
@@ -28,7 +28,7 @@ const AboutSection = () => {
         </motion.div>
 
         {/* About Content */}
-        <div className="mb-20">
+        <div className="mb-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}

@@ -25,11 +25,10 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-background/95 backdrop-blur-md shadow-lg"
+        : "bg-transparent"
+        }`}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
@@ -50,7 +49,8 @@ const Navigation = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+                className={`hover:text-primary transition-colors duration-300 font-medium ${isScrolled ? "text-foreground" : "text-white"
+                  }`}
               >
                 {link.name}
               </a>
@@ -61,7 +61,7 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className={`md:hidden ${isScrolled ? "text-foreground" : "text-white"}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -80,7 +80,8 @@ const Navigation = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
+                  className={`hover:text-primary transition-colors duration-300 font-medium py-2 ${isScrolled ? "text-foreground" : "text-white"
+                    }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}

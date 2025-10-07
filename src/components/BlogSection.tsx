@@ -51,7 +51,7 @@ const BlogSection = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group cursor-pointer"
             >
-              <div className="relative overflow-hidden rounded-2xl mb-4 aspect-video">
+              <div className="relative overflow-hidden  mb-4 aspect-video">
                 <img
                   src={post.image}
                   alt={post.title}
@@ -70,7 +70,7 @@ const BlogSection = () => {
           ))}
         </div>
 
-        <div className="flex justify-center gap-2">
+        <div className="flex justify-end gap-2">
           <Button variant="outline" size="sm">1</Button>
           <Button variant="outline" size="sm">2</Button>
           <Button variant="outline" size="sm">Next</Button>

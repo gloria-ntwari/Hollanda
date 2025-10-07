@@ -22,7 +22,7 @@ const ProductsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <p className="text-primary text-lg font-semibold mb-2">
             EXPLORER <span className=" text-black">A SELECTION OF OUR PRODUCTS</span>
@@ -34,7 +34,7 @@ const ProductsSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-wrap justify-center items-center gap-28 mb-20"
+          className="flex flex-wrap justify-center items-center gap-28 mb-16"
         >
           <div className="flex-shrink-0">
             <img
@@ -77,7 +77,7 @@ const ProductsSection = () => {
               rigorous quality checks, so every bag carries the care of the farm and the
               taste consumers love.
             </p>
-            <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold group">
+            <Button className="bg-secondary hover:bg-secondary/90 text-white font-semibold group">
               Visit Our Product
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -134,7 +134,7 @@ const ProductsSection = () => {
               rigorous quality checks, so every bag carries the care of the farm and the
               taste consumers love.
             </p>
-            <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold group">
+            <Button className="bg-secondary hover:bg-secondary/90 text-white font-semibold group">
               Visit Our Product
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
