@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import navImage from "../assets/Adobe Express - file 1.png"
+import navImage from "../assets/Adobe Express - file 1.png";
 import { Facebook, Instagram, Twitter, Linkedin, Youtube, MessageCircle } from "lucide-react";
 
 const Footer = () => {
@@ -35,9 +33,10 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Section */}
-      <div className="bg-black py-10">
+      <div className="bg-black py-10 relative">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-8 items-start mb-10">
+          {/* Top Section */}
+          <div className="grid md:grid-cols-2 gap-8 items-start mb-10 relative">
             {/* Left Side - Title */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -54,20 +53,31 @@ const Footer = () => {
             </motion.div>
 
             {/* Right Side - Newsletter Form */}
-            <div className="absolute  top-0 transform -translate-x-1/2 -translate-y-1/2 bg-black rounded-2xl shadow-lg px-1 py-1 w-80 sm:w-96 mt-[117px] -right-24">
-    <div className="bg-white rounded-xl shadow-inner p-4 flex flex-col space-y-4">
-      <input
-        type="email"
-        placeholder="Your Email"
-        className="w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
-      />
-      <button className="w-full rounded-md bg-red-600 px-4 py-2 font-semibold text-white hover:bg-red-700 transition">
-        Sign Up →
-      </button>
-    </div>
-  </div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="
+                lg:absolute lg:-top-[72px]
+                bg-black rounded-2xl shadow-lg p-1 
+                w-full sm:w-[400px] 
+                mx-auto lg:right-[-3px]
+              "
+            >
+              <div className="bg-white rounded-xl shadow-inner p-5 flex flex-col space-y-4">
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  className="w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                />
+                <button className="w-full rounded-md bg-red-600 px-4 py-2 font-semibold text-white hover:bg-red-700 transition">
+                  Sign Up →
+                </button>
+              </div>
+            </motion.div>
           </div>
 
+          {/* Bottom Section */}
           <div className="grid md:grid-cols-2 gap-16 mb-16">
             {/* Company Info */}
             <motion.div
@@ -86,8 +96,8 @@ const Footer = () => {
               <div className="text-white/80 space-y-1 text-sm leading-relaxed">
                 <p className="font-semibold text-white">Hollanda FairFoods LTD</p>
                 <p>Warehouse: KG 173 st, Kigali- Remera</p>
-                <p>Opposite Grand Legacy Hotel Main office: KG 622 st,House3. Factory</p>
-                <p>Musanze Gyanika Road</p>
+                <p>Opposite Grand Legacy Hotel Main office: KG 622 st, House 3</p>
+                <p>Factory: Musanze Gyanika Road</p>
                 <p className="pt-2">Tel: +250780050540</p>
                 <p>Email: customerservice@holland</p>
               </div>
@@ -101,29 +111,27 @@ const Footer = () => {
               className="flex flex-col justify-center mt-8"
             >
               {/* Navigation Links */}
-              <div className="flex flex-wrap gap-8 mb-6 text-white/80 justify-end">
-                <a href="#home" className="hover:text-white transition-colors text-sm text-wh">
+              <div className="flex flex-wrap gap-8 mb-6 text-white/80 justify-end md:justify-end sm:justify-start">
+                <a href="#home" className="hover:text-white transition-colors text-sm">
                   Home
                 </a>
-                <a href="#about" className="hover:text-white transition-colors text-sm text-white">
+                <a href="#about" className="hover:text-white transition-colors text-sm">
                   About
                 </a>
-                <a href="#products" className="hover:text-white transition-colors text-sm text-white">
+                <a href="#products" className="hover:text-white transition-colors text-sm">
                   Products
                 </a>
-                <a href="#blogs" className="hover:text-white transition-colors text-sm text-white">
+                <a href="#blogs" className="hover:text-white transition-colors text-sm">
                   Blogs
                 </a>
-                <a href="#contact" className="hover:text-white transition-colors text-sm text-white">
+                <a href="#contact" className="hover:text-white transition-colors text-sm">
                   Contact us
                 </a>
               </div>
-
             </motion.div>
           </div>
         </div>
       </div>
-
     </footer>
   );
 };
