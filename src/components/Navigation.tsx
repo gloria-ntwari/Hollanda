@@ -15,6 +15,20 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
@@ -57,12 +71,20 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Always closes menu when X is shown */}
           <Button
             variant="ghost"
             size="icon"
             className={`md:hidden ${isScrolled ? "text-foreground" : "text-white"}`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => {
+              if (isMobileMenuOpen) {
+                // Always close menu when X is clicked
+                setIsMobileMenuOpen(false);
+              } else {
+                // Open menu when hamburger is clicked
+                setIsMobileMenuOpen(true);
+              }
+            }}
           >
             {isMobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -72,21 +94,47 @@ const Navigation = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Always Full Orange Background */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 animate-fade-in">
-            <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`hover:text-primary transition-colors duration-300 font-medium py-2 ${isScrolled ? "text-foreground" : "text-white"
-                    }`}
+          <div className="md:hidden fixed inset-0 z-[9999] animate-fade-in">
+            {/* Full Screen Menu Content - Always Solid Orange (like image 2) */}
+            <div className="fixed inset-0 bg-gradient-to-br from-orange-500 via-orange-600 to-red-500 overflow-hidden min-h-screen w-full">
+              {/* Close Button - Always works */}
+              <div className="absolute top-6 right-6 z-20">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-white hover:text-orange-100 hover:bg-white/10 rounded-full"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {link.name}
-                </a>
-              ))}
+                  <X className="h-8 w-8" />
+                </Button>
+              </div>
+
+              {/* Menu Items - Centered like in image 2 */}
+              <div className="flex flex-col items-center justify-center min-h-screen px-8 relative z-10">
+                <div className="flex flex-col space-y-12 text-center w-full max-w-sm">
+                  {navLinks.map((link, index) => (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      className="text-white hover:text-orange-100 transition-all duration-300 font-semibold text-3xl py-4 hover:scale-105 active:scale-95"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      style={{
+                        animationDelay: `${index * 0.1}s`,
+                        animation: 'slideInFromRight 0.5s ease-out forwards',
+                        opacity: 0
+                      }}
+                    >
+                      {link.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Multiple background layers to ensure complete coverage */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500 via-orange-600 to-red-500 -z-10"></div>
+              <div className="absolute inset-0 bg-orange-500 -z-20"></div>
             </div>
           </div>
         )}
