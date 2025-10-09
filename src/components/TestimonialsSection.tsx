@@ -15,6 +15,7 @@ const TestimonialsSection = () => {
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentPage, setCurrentPage] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1); // Start with middle testimonial focused
 
   const testimonials = [
     {
@@ -79,7 +80,7 @@ const TestimonialsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="mb-12 text-center"
+          className="mb-12 justify-start"
         >
           <p className="text-primary font-semibold mb-2 font-barlow">What our clients say about us</p>
           <h2 className="text-4xl md:text-5xl font-bold mb-8 font-barlow">Testimonials</h2>
@@ -126,7 +127,10 @@ const TestimonialsSection = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center"
+                  className={`text-center transition-all duration-500 ${index === 1
+                    ? 'opacity-100 scale-100 z-10'
+                    : 'opacity-40 scale-95 z-5'
+                    }`}
                 >
                   {/* Profile Section */}
                   <div className="flex items-center justify-center mb-6">
@@ -137,12 +141,12 @@ const TestimonialsSection = () => {
                     />
                     <div className="text-left">
                       <h3 className="font-bold text-gray-900 text-base font-barlow">{testimonial.name}</h3>
-                      <p className="text-primary text-sm font-barlow">{testimonial.role}</p>
+                      <p className=" text-sm font-barlow">{testimonial.role}</p>
                     </div>
                   </div>
 
                   {/* Testimonial Text */}
-                  <p className="text-muted-foreground leading-relaxed text-center font-barlow">
+                  <p className="text-gray-500 text-sm md:text-base max-w-xs mx-auto leading-relaxed font-barlow">
                     {testimonial.text}
                   </p>
                 </motion.div>
@@ -150,15 +154,15 @@ const TestimonialsSection = () => {
             </motion.div>
           </div>
 
-          {/* Dynamic Dots Indicator */}
-          <div className="flex justify-center gap-2">
+          {/* Page Dots Indicator - Only shows pages, syncs with navigation */}
+          <div className="flex justify-center mt-8 space-x-2">
             {Array.from({ length: totalPages }, (_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentPage(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${index === currentPage
-                  ? 'w-6 bg-primary'
-                  : 'w-2 bg-gray-300 hover:bg-gray-400'
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentPage
+                    ? "bg-black scale-125"
+                    : "bg-gray-400 hover:bg-gray-500"
                   }`}
               />
             ))}
