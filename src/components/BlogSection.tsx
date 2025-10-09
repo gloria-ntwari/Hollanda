@@ -3,11 +3,12 @@ import { useInView } from "react-intersection-observer";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
-import { client, blogPostsQuery, BlogPost, urlFor } from "@/sanity/client";
+import { client, blogPostsQuery, BlogPost, urlFor, SanityBlock } from "@/sanity/client";
 import { format } from "date-fns";
 import { useState } from "react";
 import BlogModal from "./BlogModal";
 import blogImage from "../assets/Rectangle 4.png";
+
 
 // Type for the processed blog posts used in the component
 interface ProcessedBlogPost {
@@ -15,6 +16,7 @@ interface ProcessedBlogPost {
   title: string;
   image: string;
   description?: string;
+  body?: SanityBlock[]; // Added body content for rich text
   slug: string | null;
 }
 
@@ -40,47 +42,113 @@ const BlogSection = () => {
   console.log('⏳ Loading:', isLoading);
 
   // Extended fallback data for pagination demo
-  const fallbackPosts = [
+  const fallbackPosts: ProcessedBlogPost[] = [
     {
       date: "10th October 2025",
       title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       image: blogImage,
-      description: "This is a sample blog post description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      description: "This is a sample blog post description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      body: [
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: 'This is the full body content of the blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'
+            }
+          ]
+        }
+      ],
       slug: null,
     },
     {
       date: "9th October 2025",
       title: "Sed do eiusmod tempor incididunt ut labore et dolore magna.",
       image: blogImage,
-      description: "Another sample blog post with detailed content. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+      description: "Another sample blog post with detailed content. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+      body: [
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: 'Extended content for the second blog post. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.\n\nNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.'
+            }
+          ]
+        }
+      ],
       slug: null,
     },
     {
       date: "8th October 2025",
       title: "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
       image: blogImage,
-      description: "Third sample blog post description. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.",
+      description: "Third sample blog post description. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.",
+      body: [
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: 'Comprehensive content for the third post. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.\n\nSimilique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.'
+            }
+          ]
+        }
+      ],
       slug: null,
     },
     {
       date: "7th October 2025",
       title: "Duis aute irure dolor in reprehenderit in voluptate velit esse.",
       image: blogImage,
-      description: "Fourth sample blog post for pagination. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error.",
+      description: "Fourth sample blog post for pagination. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.",
+      body: [
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: 'Fourth post detailed content goes here with comprehensive information about the topic.'
+            }
+          ]
+        }
+      ],
       slug: null,
     },
     {
       date: "6th October 2025",
       title: "Excepteur sint occaecat cupidatat non proident sunt in culpa.",
       image: blogImage,
-      description: "Fifth sample blog post content. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+      description: "Fifth sample blog post content. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+      body: [
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: 'Fifth post comprehensive content with detailed explanations and insights.'
+            }
+          ]
+        }
+      ],
       slug: null,
     },
     {
       date: "5th October 2025",
       title: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit.",
       image: blogImage,
-      description: "Sixth sample blog post for demonstration. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+      description: "Sixth sample blog post for demonstration. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.",
+      body: [
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: 'Sixth post full content with extensive details and comprehensive coverage of the topic.'
+            }
+          ]
+        }
+      ],
       slug: null,
     },
   ];
@@ -92,6 +160,7 @@ const BlogSection = () => {
       title: post.title,
       image: post.image ? urlFor(post.image).width(400).height(225).url() : blogImage,
       description: post.description,
+      body: post.body || post.content, // Use body field, fallback to content
       slug: post.slug.current,
     }))
     : fallbackPosts;

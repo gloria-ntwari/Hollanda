@@ -46,6 +46,7 @@ export interface BlogPost {
   title: string;
   slug: SanitySlug;
   description?: string; // Added description field
+  body?: SanityBlock[]; // Added body field for rich content
   excerpt?: string;
   content: SanityBlock[];
   publishedAt: string;
@@ -66,6 +67,7 @@ export const blogPostsQuery = `*[_type == "post"] | order(publishedAt desc) {
   title,
   slug,
   description,
+  body,
   excerpt,
   publishedAt,
   image,
