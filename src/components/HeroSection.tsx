@@ -65,7 +65,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-barlow text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[35px] leading-tight md:leading-[1.13] tracking-[-0.00em] font-medium"
+              className="font-barlow text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[35px] leading-tight md:leading-[1.13] tracking-[-0.00em] font-medium lg:mt-72"
             >
               Nourishing Communities,
               <br />
