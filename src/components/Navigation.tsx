@@ -39,13 +39,10 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? "bg-background/95 backdrop-blur-md shadow-lg"
-        : "bg-transparent"
-        }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-5"
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 ">
           {/* Logo */}
           <a href="#home" className="flex items-center space-x-2">
             <div className="items-center justify-center">
@@ -63,8 +60,7 @@ const Navigation = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`hover:text-primary transition-colors duration-300 font-medium ${isScrolled ? "text-foreground" : "text-white"
-                  }`}
+                className="hover:text-primary transition-colors duration-300 font-barlow font-medium text-primary"
               >
                 {link.name}
               </a>
@@ -75,7 +71,7 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className={`md:hidden ${isScrolled ? "text-foreground" : "text-white"}`}
+            className="md:hidden text-foreground"
             onClick={() => {
               if (isMobileMenuOpen) {
                 // Always close menu when X is clicked
@@ -118,7 +114,7 @@ const Navigation = () => {
                     <a
                       key={link.name}
                       href={link.href}
-                      className="text-white hover:text-orange-100 transition-all duration-300 font-semibold text-3xl py-4 hover:scale-105 active:scale-95"
+                      className="text-white hover:text-orange-100 transition-all duration-300 font-barlow font-semibold text-3xl py-4 hover:scale-105 active:scale-95"
                       onClick={() => setIsMobileMenuOpen(false)}
                       style={{
                         animationDelay: `${index * 0.1}s`,

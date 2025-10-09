@@ -34,13 +34,13 @@ const AboutSection = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-barlow">
               About us
             </h2>
-            <p className="text-primary text-lg font-semibold mb-6">
+            <p className="text-primary text-lg font-semibold mb-6 font-barlow">
               Stronger communities
             </p>
-            <p className="text-lg text-muted-foreground max-w-4xl">
+            <p className="text-lg text-muted-foreground max-w-4xl font-barlow">
               Founded in 2014 by This Boer, Hollanda FairFoods crafts premium snacks while
               investing in Rwanda's potato value chain. We blend Dutch potato varieties with
               local produce to create delicious crisps that generate income and opportunities.
@@ -61,8 +61,8 @@ const AboutSection = () => {
                 <Target className="w-8 h-8" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-                <p className="text-primary-foreground/90 leading-relaxed">
+                <h3 className="text-2xl font-bold mb-4 font-barlow">Our Mission</h3>
+                <p className="text-primary-foreground/90 leading-relaxed font-barlow">
                   We aim to be Rwanda's best employer, supporting our team's growth while empowering
                   potato farmers to improve their businesses. Our goal is to add value to the potato
                   industry by delivering high-quality, affordable snacks to the region.
@@ -82,8 +82,8 @@ const AboutSection = () => {
                 <Users className="w-8 h-8" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-                <p className="text-primary-foreground/90 leading-relaxed">
+                <h3 className="text-2xl font-bold mb-4 font-barlow">Our Vision</h3>
+                <p className="text-primary-foreground/90 leading-relaxed font-barlow">
                   We aim to be Rwanda's best employer, supporting our team's growth while empowering
                   potato farmers to improve their businesses. Our goal is to add value to the potato
                   industry by delivering high-quality, affordable snacks to the region.

@@ -129,10 +129,10 @@ const TeamSection = () => {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="w-full h-80 object-cover  group-hover:grayscale-0 transition-all duration-500"
                   />
                   {/* Orange Accent Bar */}
-                  <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-primary to-orange-500"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-2 bg-primary "></div>
 
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

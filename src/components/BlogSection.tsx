@@ -204,8 +204,8 @@ const BlogSection = () => {
           transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <p className="text-primary font-semibold mb-2">Our Blog</p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">Latest News</h2>
+          <p className="text-primary font-semibold mb-2 font-barlow">Our Blog</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 font-barlow">Latest News</h2>
         </motion.div>
 
         <motion.div
@@ -231,13 +231,13 @@ const BlogSection = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <p className="text-sm text-muted-foreground mb-2">{post.date}</p>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+              <p className="text-sm text-muted-foreground mb-2 font-barlow">{post.date}</p>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors font-barlow">
                 {post.title}
               </h3>
               <button
                 onClick={() => handleReadMore(post)}
-                className="text-primary font-semibold flex items-center group-hover:gap-2 transition-all"
+                className="text-primary font-semibold flex items-center group-hover:gap-2 transition-all font-barlow"
               >
                 Read More...
                 <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />

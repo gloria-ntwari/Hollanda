@@ -27,68 +27,62 @@ const ContactSection = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">Contact us</h2>
-            <p className="text-muted-foreground mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 font-barlow">Contact us</h2>
+            <p className="text-muted-foreground mb-12 font-barlow">
               Hello enter your details if u wanna contact us or even other thoing stay
+              <br></br>
               Blessed
             </p>
 
-            <div className="space-y-8">
+            {/* Contact Information in 2x2 Grid Layout */}
+            <div className="grid grid-cols-2 gap-8">
+              {/* Email */}
               <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <Mail className="w-5 h-5 text-primary" />
-                  <h3 className="font-bold">Email</h3>
-                </div>
-                <div className="space-y-1 ml-8">
-                  <p className="text-muted-foreground">
+                <h3 className="font-bold font-barlow text-lg mb-4">Email</h3>
+                <div className="space-y-1">
+                  <p className="text-muted-foreground font-barlow">
                     bateteangeanadette@gmail.com
                   </p>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground font-barlow">
                     runbacompany@indo.org
                   </p>
                 </div>
               </div>
 
+              {/* Phone */}
               <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <Phone className="w-5 h-5 text-primary" />
-                  <h3 className="font-bold">Phone</h3>
-                </div>
-                <div className="space-y-1 ml-8">
-                  <p className="text-muted-foreground">
+                <h3 className="font-bold font-barlow text-lg mb-4">Phone</h3>
+                <div className="space-y-1">
+                  <p className="text-muted-foreground font-barlow">
                     bateteangeanadette@gmail.com
                   </p>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground font-barlow">
                     runbacompany@indo.org
                   </p>
                 </div>
               </div>
 
+              {/* Mobile */}
               <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  <h3 className="font-bold">Mobile</h3>
-                </div>
-                <div className="space-y-1 ml-8">
-                  <p className="text-muted-foreground">
+                <h3 className="font-bold font-barlow text-lg mb-4">Mobile</h3>
+                <div className="space-y-1">
+                  <p className="text-muted-foreground font-barlow">
                     bateteangeanadette@gmail.com
                   </p>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground font-barlow">
                     runbacompany@indo.org
                   </p>
                 </div>
               </div>
 
+              {/* Office */}
               <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  <h3 className="font-bold">Office</h3>
-                </div>
-                <div className="space-y-1 ml-8">
-                  <p className="text-muted-foreground">
+                <h3 className="font-bold font-barlow text-lg mb-4">Office</h3>
+                <div className="space-y-1">
+                  <p className="text-muted-foreground font-barlow">
                     bateteangeanadette@gmail.com
                   </p>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground font-barlow">
                     runbacompany@indo.org
                   </p>
                 </div>
@@ -103,30 +97,30 @@ const ContactSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="bg-card border rounded-3xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold mb-6">Write a message</h3>
+              <h3 className="text-2xl font-bold mb-6 font-barlow">Write a message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="block text-sm font-medium mb-2 font-barlow">
                       First Name*
                     </label>
                     <Input placeholder="Ange" required />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="block text-sm font-medium mb-2 font-barlow">
                       Last Name*
                     </label>
                     <Input placeholder="Ange" required />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">
+                  <label className="block text-sm font-medium mb-2 font-barlow">
                     Email*
                   </label>
                   <Input type="email" placeholder="Ange" required />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">
+                  <label className="block text-sm font-medium mb-2 font-barlow">
                     Message*
                   </label>
                   <Textarea
@@ -137,7 +131,7 @@ const ContactSection = () => {
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold font-barlow"
                 >
                   Submit
                 </Button>

@@ -24,7 +24,7 @@ const ProductsSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <p className="text-primary text-lg font-semibold mb-2">
+          <p className="text-primary text-lg font-semibold mb-2 font-barlow">
             EXPLORER <span className=" text-black">A SELECTION OF OUR PRODUCTS</span>
           </p>
         </motion.div>
@@ -59,25 +59,25 @@ const ProductsSection = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <p className="text-primary font-semibold mb-4">Our products</p>
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">
+            <p className="text-primary font-semibold mb-4 font-barlow">Our products</p>
+            <h3 className="text-3xl md:text-4xl font-bold mb-6 font-barlow">
               WINNAZ - THE <span className="text-primary">STAR</span> OF
               <br />
               EVERY PARTY!
             </h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-muted-foreground mb-6 leading-relaxed font-barlow">
               Golden, crunchy, and full of flavor. Winnaz is made from specially selected
               potatoes and crafted to deliver a perfect bite every time.
             </p>
-            <h4 className="text-xl font-bold mb-4">FROM FIELD TO PACK</h4>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
+            <h4 className="text-xl font-bold mb-4 font-barlow">FROM FIELD TO PACK</h4>
+            <p className="text-muted-foreground mb-8 leading-relaxed font-barlow">
               Each Winnaz crisp begins on a smallholder farm. Our agronomists work closely
               with growers to improve yields and quality. We source potatoes that meet
               strict standards, add slow, controlled frying, and finish each batch under
               rigorous quality checks, so every bag carries the care of the farm and the
               taste consumers love.
             </p>
-            <Button className="bg-secondary hover:bg-secondary/90 text-white font-semibold group">
+            <Button className="bg-secondary hover:bg-secondary/90 text-white font-semibold group font-barlow">
               Visit Our Product
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -117,24 +117,24 @@ const ProductsSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="order-1 lg:order-2"
           >
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6 font-barlow">
               WHEELIEZ - THE <span className="text-primary">STAR</span> OF
               <br />
               EVERY PARTY!
             </h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-muted-foreground mb-6 leading-relaxed font-barlow">
               Golden, crunchy, and full of flavor. Winnaz is made from specially selected
               potatoes and crafted to deliver a perfect bite every time.
             </p>
-            <h4 className="text-xl font-bold mb-4">FROM FIELD TO PACK</h4>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
+            <h4 className="text-xl font-bold mb-4 font-barlow">FROM FIELD TO PACK</h4>
+            <p className="text-muted-foreground mb-8 leading-relaxed font-barlow">
               Each Winnaz crisp begins on a smallholder farm. Our agronomists work closely
               with growers to improve yields and quality. We source potatoes that meet
               strict standards, add slow, controlled frying, and finish each batch under
               rigorous quality checks, so every bag carries the care of the farm and the
               taste consumers love.
             </p>
-            <Button className="bg-secondary hover:bg-secondary/90 text-white font-semibold group">
+            <Button className="bg-secondary hover:bg-secondary/90 text-white font-semibold group font-barlow">
               Visit Our Product
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>

@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import heroImage from "@/assets/Rectangle 325.png";
+import { useState, useEffect } from "react";
+import heroImage from "@/assets/hero-image.jpg";
+import image1 from "../assets/Rectangle 325.png";
 
 const HeroSection = () => {
   const [ref, inView] = useInView({
@@ -8,61 +10,67 @@ const HeroSection = () => {
     threshold: 0.1,
   });
 
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Only 3 snack images for background
+  const backgroundImages = [
+    image1,
+    heroImage
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
+
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
-      style={{
-        background: "linear-gradient(135deg, hsl(6 93% 64%) 0%, hsl(15 90% 58%) 50%, hsl(330 60% 75%) 100%)",
-      }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
+      {/* Animated Background Images */}
+      {backgroundImages.map((image, index) => (
+        <motion.div
+          key={index}
+          className="absolute inset-0 w-full h-full"
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: index === currentImageIndex ? 1 : 0,
+          }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+        >
+          <img
+            src={image}
+            alt={`Background ${index + 1}`}
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/40" />
+        </motion.div>
+      ))}
+
+      {/* Content */}
+      <div className="container-custom relative z-10">
+        <div className="flex items-center min-h-screen pt-20">
           <motion.div
             ref={ref}
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-white"
+            className="text-left text-white max-w-2xl"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+              className="font-barlow text-[35px] leading-[1.13] tracking-[-0.00em] font-medium mt-72"
             >
               Nourishing Communities,
               <br />
               <span className="text-white/90">One Harvest at a Time</span>
             </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl text-white/90 mb-8"
-            >
-              Crafting premium snacks while empowering local farmers and building stronger communities.
-            </motion.p>
-          </motion.div>
-
-          {/* Hero Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={inView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="relative"
-          >
-            <div className="relative z-10">
-              <img
-                src={heroImage}
-                alt="Premium Snacks"
-                className="w-full h-auto rounded-3xl shadow-2xl"
-              />
-            </div>
-            {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-72 h-72 bg-white/10 rounded-full blur-3xl -z-10" />
-            <div className="absolute -bottom-4 -left-4 w-64 h-64 bg-white/10 rounded-full blur-3xl -z-10" />
           </motion.div>
         </div>
       </div>

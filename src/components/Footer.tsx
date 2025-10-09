@@ -17,9 +17,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative overflow-hidden">
+    <footer className="relative overflow-hidden mt-10">
       {/* Newsletter Section */}
-      <div className="bg-white py-14">
+      <div className="bg-white py-10">
         <div className="container-custom">
           <motion.div
             ref={ref}
@@ -27,7 +27,7 @@ const Footer = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-4xl font-bold text-black mb-[-50px]">
+            <h2 className="text-4xl md:text-4xl font-bold text-black mb-[-70px]">
               SIGN UP TO FOLLOW
             </h2>
           </motion.div>
@@ -35,9 +35,9 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Section */}
-      <div className="bg-black py-14">
+      <div className="bg-black py-10">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-8 items-start mb-16">
+          <div className="grid md:grid-cols-2 gap-8 items-start mb-10">
             {/* Left Side - Title */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -45,38 +45,27 @@ const Footer = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="text-3xl md:text-4xl font-bold mt-[-40px] leading-snug">
-  <span className="text-secondary">HOLLANDA</span>{" "}
-  <span className="text-white">
-    PROJECTS, FUNDING AND CAREER{" "}
-  </span>
-  <span className="text-primary">OPPORTUNITIES</span>
-</p>
+                <span className="text-secondary">HOLLANDA</span>{" "}
+                <span className="text-white">
+                  PROJECTS, FUNDING AND CAREER{" "}
+                </span>
+                <span className="text-primary">OPPORTUNITIES</span>
+              </p>
             </motion.div>
 
             {/* Right Side - Newsletter Form */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex justify-end mt-8"
-            >
-              <form onSubmit={handleNewsletterSubmit} className="w-full max-w-sm h-20">
-                <div className="bg-white rounded-2xl p-6 shadow-xl">
-                  <Input
-                    type="email"
-                    placeholder="Your Email"
-                    className="mb-4 border-gray-200 focus:border-primary"
-                    required
-                  />
-                  <Button
-                    type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 rounded-lg"
-                  >
-                    Sign Up
-                  </Button>
-                </div>
-              </form>
-            </motion.div>
+            <div className="absolute  top-0 transform -translate-x-1/2 -translate-y-1/2 bg-black rounded-2xl shadow-lg px-1 py-1 w-80 sm:w-96 mt-[117px] -right-24">
+    <div className="bg-white rounded-xl shadow-inner p-4 flex flex-col space-y-4">
+      <input
+        type="email"
+        placeholder="Your Email"
+        className="w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+      />
+      <button className="w-full rounded-md bg-red-600 px-4 py-2 font-semibold text-white hover:bg-red-700 transition">
+        Sign Up →
+      </button>
+    </div>
+  </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 mb-16">
@@ -96,15 +85,11 @@ const Footer = () => {
 
               <div className="text-white/80 space-y-1 text-sm leading-relaxed">
                 <p className="font-semibold text-white">Hollanda FairFoods LTD</p>
-                <p>Warehouse: KG 173 st, Kigali-</p>
-                <p>Remera</p>
-                <p>Opposite Grand Legacy</p>
-                <p>Hotel Main office: KG 622 st,</p>
-                <p>House3, Factory: Musanze</p>
-                <p>Gyanika Road</p>
+                <p>Warehouse: KG 173 st, Kigali- Remera</p>
+                <p>Opposite Grand Legacy Hotel Main office: KG 622 st,House3. Factory</p>
+                <p>Musanze Gyanika Road</p>
                 <p className="pt-2">Tel: +250780050540</p>
                 <p>Email: customerservice@holland</p>
-                <p>afairfoods.com</p>
               </div>
             </motion.div>
 
@@ -117,68 +102,28 @@ const Footer = () => {
             >
               {/* Navigation Links */}
               <div className="flex flex-wrap gap-8 mb-6 text-white/80 justify-end">
-                <a href="#home" className="hover:text-white transition-colors text-sm">
+                <a href="#home" className="hover:text-white transition-colors text-sm text-wh">
                   Home
                 </a>
-                <a href="#about" className="hover:text-white transition-colors text-sm">
+                <a href="#about" className="hover:text-white transition-colors text-sm text-white">
                   About
                 </a>
-                <a href="#products" className="hover:text-white transition-colors text-sm">
+                <a href="#products" className="hover:text-white transition-colors text-sm text-white">
                   Products
                 </a>
-                <a href="#blogs" className="hover:text-white transition-colors text-sm">
+                <a href="#blogs" className="hover:text-white transition-colors text-sm text-white">
                   Blogs
                 </a>
-                <a href="#contact" className="hover:text-white transition-colors text-sm">
+                <a href="#contact" className="hover:text-white transition-colors text-sm text-white">
                   Contact us
                 </a>
               </div>
 
-              {/* Social Media Icons */}
-              <div className="flex gap-4 justify-end">
-                <button className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-all">
-                  <MessageCircle className="w-5 h-5" />
-                </button>
-                <button className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-all">
-                  <Instagram className="w-5 h-5" />
-                </button>
-                <button className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-all">
-                  <Twitter className="w-5 h-5" />
-                </button>
-                <button className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-all">
-                  <Facebook className="w-5 h-5" />
-                </button>
-                <button className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-all">
-                  <Linkedin className="w-5 h-5" />
-                </button>
-                <button className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-all">
-                  <Youtube className="w-5 h-5" />
-                </button>
-              </div>
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Copyright Section */}
-      <div className="bg-primary py-4">
-        <div className="container-custom">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-white text-sm">
-            <p>©2025 Copyr-rightsd</p>
-            <div className="flex gap-8">
-              <a href="#" className="hover:text-white/80 transition-colors">
-                Terms of services
-              </a>
-              <a href="#" className="hover:text-white/80 transition-colors">
-                Privacy policy
-              </a>
-              <a href="#" className="hover:text-white/80 transition-colors">
-                Cookies
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </footer>
   );
 };

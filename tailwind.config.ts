@@ -14,6 +14,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'bowl': ['Bowl', 'sans-serif'],
+        'barlow': ['Barlow', 'sans-serif'],
+        'sans': ['Barlow', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "#e2e8f0",
         input: "#e2e8f0",
