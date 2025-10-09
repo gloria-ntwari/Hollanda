@@ -19,7 +19,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="section-padding bg-muted/30">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
           <motion.div
             ref={ref}
@@ -27,15 +27,15 @@ const ContactSection = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 font-barlow">Contact us</h2>
-            <p className="text-muted-foreground mb-12 font-barlow">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 font-barlow">Contact us</h2>
+            <p className="text-muted-foreground mb-8 md:mb-12 font-barlow">
               Hello enter your details if u wanna contact us or even other thoing stay
               <br></br>
               Blessed
             </p>
 
             {/* Contact Information in 2x2 Grid Layout */}
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
               {/* Email */}
               <div>
                 <h3 className="font-bold font-barlow text-lg mb-4">Email</h3>

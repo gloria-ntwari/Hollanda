@@ -34,7 +34,7 @@ const ProductsSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-wrap justify-center items-center gap-28 mb-16"
+          className="flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-28 mb-12 md:mb-16"
         >
           <div className="flex-shrink-0">
             <img

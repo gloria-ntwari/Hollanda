@@ -91,8 +91,8 @@ const TestimonialsSection = () => {
             onClick={() => scroll('left')}
             disabled={currentPage === 0}
             className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center transition-all duration-300 ${currentPage === 0
-                ? 'text-gray-300 cursor-not-allowed'
-                : 'text-gray-600 hover:text-primary cursor-pointer'
+              ? 'text-gray-300 cursor-not-allowed'
+              : 'text-gray-600 hover:text-primary cursor-pointer'
               }`}
           >
             <ChevronLeft className="w-6 h-6" />
@@ -103,22 +103,22 @@ const TestimonialsSection = () => {
             onClick={() => scroll('right')}
             disabled={currentPage === totalPages - 1}
             className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center transition-all duration-300 ${currentPage === totalPages - 1
-                ? 'text-gray-300 cursor-not-allowed'
-                : 'text-gray-600 hover:text-primary cursor-pointer'
+              ? 'text-gray-300 cursor-not-allowed'
+              : 'text-gray-600 hover:text-primary cursor-pointer'
               }`}
           >
             <ChevronRight className="w-6 h-6" />
           </button>
 
           {/* 3-Column Grid Layout with Animation */}
-          <div className="px-12">
+          <div className="px-4 md:px-12">
             <motion.div
               key={currentPage}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.5 }}
-              className="grid md:grid-cols-3 gap-8 mb-12"
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12"
             >
               {getCurrentTestimonials().map((testimonial, index) => (
                 <motion.div
@@ -157,8 +157,8 @@ const TestimonialsSection = () => {
                 key={index}
                 onClick={() => setCurrentPage(index)}
                 className={`h-2 rounded-full transition-all duration-300 ${index === currentPage
-                    ? 'w-6 bg-primary'
-                    : 'w-2 bg-gray-300 hover:bg-gray-400'
+                  ? 'w-6 bg-primary'
+                  : 'w-2 bg-gray-300 hover:bg-gray-400'
                   }`}
               />
             ))}
