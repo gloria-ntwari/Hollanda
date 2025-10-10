@@ -14,63 +14,35 @@ const TestimonialsSection = () => {
   });
 
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(1); // Start with middle testimonial focused
+  const [currentIndex, setCurrentIndex] = useState(1); // middle one active
 
   const testimonials = [
-    {
-      name: "John Doe",
-      role: "Entrepreneur",
-      text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae",
-      image: client1
-    },
-    {
-      name: "John Doe",
-      role: "Entrepreneur",
-      text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae",
-      image: client2
-    },
-    {
-      name: "John Doe",
-      role: "Entrepreneur",
-      text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae",
-      image: client3
-    },
-    {
-      name: "Jane Smith",
-      role: "Business Owner",
-      text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae",
-      image: client4
-    },
-    {
-      name: "Mike Johnson",
-      role: "CEO",
-      text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae",
-      image: client3
-    },
-    {
-      name: "Sarah Wilson",
-      role: "Founder",
-      text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae",
-      image: client2
-    }
+    { name: "John Doe", role: "Entrepreneur", text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae", image: client1 },
+    { name: "John Doe", role: "Entrepreneur", text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae", image: client2 },
+    { name: "John Doe", role: "Entrepreneur", text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae", image: client3 },
+    { name: "Jane Smith", role: "Business Owner", text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae", image: client4 },
+    { name: "Mike Johnson", role: "CEO", text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae", image: client3 },
+    { name: "Sarah Wilson", role: "Founder", text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae", image: client2 },
   ];
 
-  const testimonialsPerPage = 3;
-  const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
 
-  const scroll = (direction: 'left' | 'right') => {
-    if (direction === 'left' && currentPage > 0) {
-      setCurrentPage(currentPage - 1);
-    } else if (direction === 'right' && currentPage < totalPages - 1) {
-      setCurrentPage(currentPage + 1);
+  const scroll = (direction: "left" | "right") => {
+    if (direction === "left" && currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
+    } else if (direction === "right" && currentIndex < testimonials.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
     }
   };
 
+
   const getCurrentTestimonials = () => {
-    const startIndex = currentPage * testimonialsPerPage;
-    return testimonials.slice(startIndex, startIndex + testimonialsPerPage);
+    const start = Math.max(0, currentIndex - 1);
+    const end = Math.min(testimonials.length, start + 3);
+    return testimonials.slice(start, end);
   };
+
+  // Keep the dots logic the same (total visible positions)
+  const totalDots = testimonials.length;
 
   return (
     <section className="section-padding bg-background">
@@ -82,87 +54,107 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8 }}
           className="mb-12 justify-start"
         >
-          <p className="text-primary font-semibold mb-2 font-barlow">What our clients say about us</p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 font-barlow">Testimonials</h2>
+          <p className="text-primary font-semibold mb-2 font-barlow">
+            What our clients say about us
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 font-barlow">
+            Testimonials
+          </h2>
         </motion.div>
 
         <div className="relative">
-          {/* Left Navigation Arrow */}
+          {/* Left Arrow */}
           <button
-            onClick={() => scroll('left')}
-            disabled={currentPage === 0}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center transition-all duration-300 ${currentPage === 0
-              ? 'text-gray-300 cursor-not-allowed'
-              : 'text-gray-600 hover:text-primary cursor-pointer'
+            onClick={() => scroll("left")}
+            disabled={currentIndex === 0}
+            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center transition-all duration-300 ${currentIndex === 0
+              ? "text-gray-300 cursor-not-allowed"
+              : "text-gray-600 hover:text-primary cursor-pointer"
               }`}
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
 
-          {/* Right Navigation Arrow */}
+          {/* Right Arrow */}
           <button
-            onClick={() => scroll('right')}
-            disabled={currentPage === totalPages - 1}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center transition-all duration-300 ${currentPage === totalPages - 1
-              ? 'text-gray-300 cursor-not-allowed'
-              : 'text-gray-600 hover:text-primary cursor-pointer'
+            onClick={() => scroll("right")}
+            disabled={currentIndex === testimonials.length - 1}
+            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center transition-all duration-300 ${currentIndex === testimonials.length - 1
+              ? "text-gray-300 cursor-not-allowed"
+              : "text-gray-600 hover:text-primary cursor-pointer"
               }`}
           >
             <ChevronRight className="w-6 h-6" />
           </button>
 
-          {/* 3-Column Grid Layout with Animation */}
-          <div className="px-4 md:px-12">
-            <motion.div
-              key={currentPage}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12"
+          {/* Testimonials - No sliding animations */}
+<div className="px-4 md:px-12">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
+    {getCurrentTestimonials().map((testimonial, index) => (
+      <div
+        key={`${testimonial.name}-${index}`}
+        className={`text-center relative ${
+          index === 1 ? "scale-110 z-20 transform" : "scale-100 z-5"
+        }`}
+        style={{
+          filter:
+            index === 1
+              ? "blur(0px) brightness(1)"
+              : " brightness(0.7)",
+        }}
+      >
+        {/* Profile */}
+        <div className="flex items-center justify-center mb-6">
+          <img
+            src={testimonial.image}
+            alt={testimonial.name}
+            className={`w-12 h-12 rounded-full object-cover mr-4 transition-all duration-500`}
+          />
+          <div className="text-left">
+            <h3
+              className={`font-bold text-base font-barlow transition-all duration-500 ${
+                index === 1 ? "text-black" : "text-black"
+              }`}
             >
-              {getCurrentTestimonials().map((testimonial, index) => (
-                <motion.div
-                  key={`${currentPage}-${index}`}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`text-center transition-all duration-500 ${index === 1
-                    ? 'opacity-100 scale-100 z-10'
-                    : 'opacity-40 scale-95 z-5'
-                    }`}
-                >
-                  {/* Profile Section */}
-                  <div className="flex items-center justify-center mb-6">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover mr-4"
-                    />
-                    <div className="text-left">
-                      <h3 className="font-bold text-gray-900 text-base font-barlow">{testimonial.name}</h3>
-                      <p className=" text-sm font-barlow">{testimonial.role}</p>
-                    </div>
-                  </div>
-
-                  {/* Testimonial Text */}
-                  <p className="text-gray-500 text-sm md:text-base max-w-xs mx-auto leading-relaxed font-barlow">
-                    {testimonial.text}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
+              {testimonial.name}
+            </h3>
+            <p
+              className={`text-sm font-barlow transition-all duration-500 ${
+                index === 1 ? "text-black" : "text-black"
+              }`}
+            >
+              {testimonial.role}
+            </p>
           </div>
+        </div>
 
-          {/* Page Dots Indicator - Only shows pages, syncs with navigation */}
+        {/* Text */}
+        <p
+          className={`text-sm md:text-base max-w-xs mx-auto leading-relaxed font-barlow transition-all duration-500 ${
+            index === 1 ? "text-black" : "text-gray-500"
+          }`}
+        >
+          {testimonial.text}
+        </p>
+
+        {index === 1 && (
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-transparent via-white/5 to-transparent rounded-2xl" />
+        )}
+      </div>
+    ))}
+  </div>
+</div>
+
+
+          {/* Dots */}
           <div className="flex justify-center mt-8 space-x-2">
-            {Array.from({ length: totalPages }, (_, index) => (
+            {Array.from({ length: totalDots }, (_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentPage(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentPage
-                    ? "bg-black scale-125"
-                    : "bg-gray-400 hover:bg-gray-500"
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                  ? "bg-black scale-125"
+                  : "bg-gray-400 hover:bg-gray-500"
                   }`}
               />
             ))}
