@@ -153,6 +153,15 @@ All colors MUST be HSL.
   .animate-slide-in-right {
     animation: slideInRight 0.6s ease-out forwards;
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @keyframes fadeInUp {
