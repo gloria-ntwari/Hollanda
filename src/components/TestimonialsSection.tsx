@@ -76,13 +76,11 @@ const TestimonialsSection = () => {
           <button
             onClick={() => scroll("left")}
             disabled={currentIndex === 0}
-            className={`absolute ${
-              isMobile ? "left-2 top-1/2 -translate-y-1/2" : "left-0 top-1/2 -translate-y-1/2"
-            } z-10 w-10 h-10 flex items-center justify-center transition-all duration-300 ${
-              currentIndex === 0
+            className={`absolute ${isMobile ? "left-2 top-1/2 -translate-y-1/2" : "left-0 top-1/2 -translate-y-1/2"
+              } z-10 w-10 h-10 flex items-center justify-center transition-all duration-300 ${currentIndex === 0
                 ? "text-gray-300 cursor-not-allowed"
                 : "text-gray-600 hover:text-primary cursor-pointer"
-            }`}
+              }`}
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
@@ -91,13 +89,11 @@ const TestimonialsSection = () => {
           <button
             onClick={() => scroll("right")}
             disabled={currentIndex === testimonials.length - 1}
-            className={`absolute ${
-              isMobile ? "right-2 top-1/2 -translate-y-1/2" : "right-0 top-1/2 -translate-y-1/2"
-            } z-10 w-10 h-10 flex items-center justify-center transition-all duration-300 ${
-              currentIndex === testimonials.length - 1
+            className={`absolute ${isMobile ? "right-2 top-1/2 -translate-y-1/2" : "right-0 top-1/2 -translate-y-1/2"
+              } z-10 w-10 h-10 flex items-center justify-center transition-all duration-300 ${currentIndex === testimonials.length - 1
                 ? "text-gray-300 cursor-not-allowed"
                 : "text-gray-600 hover:text-primary cursor-pointer"
-            }`}
+              }`}
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -105,16 +101,14 @@ const TestimonialsSection = () => {
           {/* Testimonials */}
           <div className="px-4 md:px-12">
             <div
-              className={`grid ${
-                isMobile ? "grid-cols-1" : "grid-cols-3"
-              } gap-6 md:gap-8 mb-12`}
+              className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-3"
+                } gap-6 md:gap-8 mb-12`}
             >
               {getCurrentTestimonials().map((testimonial, index) => (
                 <div
                   key={`${testimonial.name}-${index}`}
-                  className={`text-center relative ${
-                    !isMobile && index === 1 ? "scale-110 z-20 transform" : "scale-100 z-5"
-                  }`}
+                  className={`text-center relative ${!isMobile && index === 1 ? "scale-110 z-20 transform" : "scale-100 z-5"
+                    }`}
                   style={{
                     filter:
                       !isMobile && index === 1
@@ -141,9 +135,8 @@ const TestimonialsSection = () => {
 
                   {/* Text */}
                   <p
-                    className={`text-sm md:text-base max-w-xs mx-auto leading-relaxed font-barlow transition-all duration-500 ${
-                      !isMobile && index === 1 ? "text-black" : "text-gray-600"
-                    }`}
+                    className={`text-sm md:text-base max-w-xs mx-auto leading-relaxed font-barlow transition-all duration-500 ${!isMobile && index === 1 ? "text-black" : "text-gray-600"
+                      }`}
                   >
                     {testimonial.text}
                   </p>
@@ -158,11 +151,10 @@ const TestimonialsSection = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
                     ? "bg-black scale-125"
                     : "bg-gray-400 hover:bg-gray-500"
-                }`}
+                  }`}
               />
             ))}
           </div>

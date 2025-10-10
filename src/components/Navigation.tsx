@@ -6,12 +6,30 @@ import navImage from "../assets/Adobe Express - file 1.png"
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      // Check which section is currently in view
+      const sections = ["home", "about", "products", "blogs", "contact"];
+      const scrollPosition = window.scrollY + 100; // Offset for better detection
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check initial section
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -30,11 +48,11 @@ const Navigation = () => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Products", href: "#products" },
-    { name: "Blogs", href: "#blogs" },
-    { name: "Contact Us", href: "#contact" },
+    { name: "Home", href: "#home", id: "home" },
+    { name: "About", href: "#about", id: "about" },
+    { name: "Products", href: "#products", id: "products" },
+    { name: "Blogs", href: "#blogs", id: "blogs" },
+    { name: "Contact Us", href: "#contact", id: "contact" },
   ];
 
   return (
@@ -60,9 +78,14 @@ const Navigation = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="hover:text-black transition-colors duration-300 font-barlow font-medium text-primary"
+                className={`hover:text-black transition-all duration-300 font-barlow font-medium text-primary relative ${activeSection === link.id ? 'text-black' : ''
+                  }`}
               >
                 {link.name}
+                {/* Active section underline */}
+                {activeSection === link.id && (
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-orange-500 animate-fade-in"></div>
+                )}
               </a>
             ))}
           </div>
@@ -114,7 +137,8 @@ const Navigation = () => {
                     <a
                       key={link.name}
                       href={link.href}
-                      className="text-white hover:text-orange-100 transition-all duration-300 font-barlow font-semibold text-3xl py-4 hover:scale-105 active:scale-95"
+                      className={`text-white hover:text-orange-100 transition-all duration-300 font-barlow font-semibold text-3xl py-4 hover:scale-105 active:scale-95 relative ${activeSection === link.id ? 'text-orange-100' : ''
+                        }`}
                       onClick={() => setIsMobileMenuOpen(false)}
                       style={{
                         animationDelay: `${index * 0.1}s`,
@@ -123,6 +147,10 @@ const Navigation = () => {
                       }}
                     >
                       {link.name}
+                      {/* Active section underline for mobile */}
+                      {activeSection === link.id && (
+                        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white rounded-full animate-fade-in"></div>
+                      )}
                     </a>
                   ))}
                 </div>
