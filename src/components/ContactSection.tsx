@@ -41,10 +41,10 @@ const ContactSection = () => {
                 <h3 className="font-bold font-barlow text-lg mb-4">Email</h3>
                 <div className="space-y-1">
                   <p className="text-muted-foreground font-barlow">
-                    bateteangeanadette@gmail.com
+                    customerservice@hollandafairfoods.com
                   </p>
                   <p className="text-muted-foreground font-barlow">
-                    runbacompany@indo.org
+                    
                   </p>
                 </div>
               </div>
@@ -54,23 +54,23 @@ const ContactSection = () => {
                 <h3 className="font-bold font-barlow text-lg mb-4">Phone</h3>
                 <div className="space-y-1">
                   <p className="text-muted-foreground font-barlow">
-                    bateteangeanadette@gmail.com
+                    Tel: +250786050540
                   </p>
                   <p className="text-muted-foreground font-barlow">
-                    runbacompany@indo.org
+                    
                   </p>
                 </div>
               </div>
 
               {/* Mobile */}
               <div>
-                <h3 className="font-bold font-barlow text-lg mb-4">Mobile</h3>
+                <h3 className="font-bold font-barlow text-lg mb-4">Based In</h3>
                 <div className="space-y-1">
                   <p className="text-muted-foreground font-barlow">
-                    bateteangeanadette@gmail.com
+                    RWANDA – KIGALI Head Office
                   </p>
                   <p className="text-muted-foreground font-barlow">
-                    runbacompany@indo.org
+                    Warehouse: KG 173 st, Kigali-Remera
                   </p>
                 </div>
               </div>
@@ -80,10 +80,13 @@ const ContactSection = () => {
                 <h3 className="font-bold font-barlow text-lg mb-4">Office</h3>
                 <div className="space-y-1">
                   <p className="text-muted-foreground font-barlow">
-                    bateteangeanadette@gmail.com
+                    Opposite Grand Legacy Hotel
                   </p>
                   <p className="text-muted-foreground font-barlow">
-                    runbacompany@indo.org
+                    Main office: KG 622 st, House3
+                  </p>
+                  <p className="text-muted-foreground font-barlow">
+                     Factory: Musanze Cyanika Road
                   </p>
                 </div>
               </div>
