@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Users, Target } from "lucide-react";
-import aboutImage from "@/assets/Rectangle 3.png";
+import aboutImage from "../assets/Farmers.jpg";
 
 const AboutSection = () => {
   const [ref, inView] = useInView({
