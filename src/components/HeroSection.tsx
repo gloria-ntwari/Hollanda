@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
-import heroImage from "@/assets/hero-image.jpg";
-import image1 from "../assets/Rectangle 325.png";
+import heroVideo from "@/assets/Winnaz, the star of every party!!!.mp4";
 
 const HeroSection = () => {
   const [ref, inView] = useInView({
@@ -10,46 +8,29 @@ const HeroSection = () => {
     threshold: 0.1,
   });
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // Only 3 snack images for background
-  const backgroundImages = [
-    image1,
-    heroImage
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [backgroundImages.length]);
-
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Animated Background Images */}
-      {backgroundImages.map((image, index) => (
-        <motion.div
-          key={index}
-          className="absolute inset-0 w-full h-full"
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: index === currentImageIndex ? 1 : 0,
-          }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-        >
-          <img
-            src={image}
-            alt={`Background ${index + 1}`}
-            className="w-full h-full object-cover"
-          />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/40" />
-        </motion.div>
-      ))}
+      {/* Background Video */}
+      <motion.div
+        className="absolute inset-0 w-full h-full"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+      >
+        <video
+          src={heroVideo}
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40" />
+      </motion.div>
 
       {/* Content */}
       <div className="container-custom relative z-10">
