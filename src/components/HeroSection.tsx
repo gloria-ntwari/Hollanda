@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import heroVideo from "@/assets/Winnaz, the star of every party!!!.mp4";
+import heroVideo from "@/assets/Hero-vid.mp4";
 
 const HeroSection = () => {
   const [ref, inView] = useInView({
@@ -42,7 +42,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-left text-white w-full max-w-2xl"
           >
-            <motion.h1
+            {/* <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -51,7 +51,7 @@ const HeroSection = () => {
               Nourishing Communities,
               <br />
               <span className="text-white/90">One Harvest at a Time</span>
-            </motion.h1>
+            </motion.h1> */}
           </motion.div>
         </div>
       </div>
