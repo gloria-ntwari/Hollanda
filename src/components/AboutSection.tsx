@@ -23,7 +23,7 @@ const AboutSection = () => {
           <img
             src={aboutImage}
             alt="Our Community"
-            className="w-full h-[400px] object-cover rounded-3xl shadow-xl"
+            className="w-full h-[400px] object-cover rounded-3xl shadow-xl object-[center_60%]"
           />
         </motion.div>
 

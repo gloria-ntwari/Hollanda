@@ -26,7 +26,7 @@ const ProductsSection = () => {
           className="text-center mb-12"
         >
           <p className="text-primary text-lg font-semibold mb-2 font-barlow">
-            EXPLORER <span className=" text-black">A SELECTION OF OUR PRODUCTS</span>
+            EXPLORE <span className=" text-black">A SELECTION OF OUR PRODUCTS</span>
           </p>
         </motion.div>
 
