@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import productWinnaz from "../assets/Rectangle 1.png";
+import productWinnaz from "../assets/WhatsApp Image 2025-10-20 at 3.22.04 PM.jpeg";
+import tsinda from "../assets/WhatsApp_Image_2025-10-20_at_1.32.40_PM-removebg-preview.png";
 import productWheeliez from "../assets/image 1.png";
 import winnaz from "../assets/Mask group.png";
 import wheeliez from "../assets/Clip path group.png";
@@ -50,6 +51,13 @@ const ProductsSection = () => {
               className="h-20 md:h-24 lg:h-28 w-auto object-contain"
             />
           </div>
+          <div className="flex-shrink-0">
+            <img
+              src={tsinda}
+              alt="Wheeliez"
+              className="h-20 md:h-24 lg:h-28 w-auto object-contain"
+            />
+          </div>
         </motion.div>
 
         {/* Winnaz Product */}
@@ -91,7 +99,7 @@ const ProductsSection = () => {
             <img
               src={productWinnaz}
               alt="Winnaz Products"
-              className="w-full h-auto rounded-3xl shadow-2xl"
+              className="w-full h-[500px] rounded-3xl shadow-2xl"
             />
           </motion.div>
         </div>

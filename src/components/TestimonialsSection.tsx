@@ -17,12 +17,10 @@ const TestimonialsSection = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const testimonials = [
-    { name: "John Doe", role: "Entrepreneur", text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae", image: client1 },
-    { name: "John Doe", role: "Entrepreneur", text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae", image: client2 },
-    { name: "John Doe", role: "Entrepreneur", text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae", image: client3 },
-    { name: "Jane Smith", role: "Business Owner", text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae", image: client4 },
-    { name: "Mike Johnson", role: "CEO", text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae", image: client3 },
-    { name: "Sarah Wilson", role: "Founder", text: "Lorem ipsum dolor sit amet consectetur, adipiscing elit. Dolor aliquam neque laudantium fuga minus dignissimos id fugiat enim, non, assumenda, aliquid dicta officia beatae", image: client2 },
+    { name: "Niyibizi Egide", role: "Head of Production", text: "Winnaz is a source of employment for over 60 people directly and over 450 indirectly. This gives hope that agriculture combined with industry can transform the economy of our regions.", image: client1 },
+    { name: "Uwanyirigira Clarisse", role: " Head of economic development in Musanze district", text: "Hollanda Fairfoods is a company that has made a difference in the lives of its people and has built a new image of how agriculture can develop the country.", image: client2 },
+    { name: "Nzabarinda Isaac", role: "Farmer", text: "Before, we used to grow potatoes and harvest them, but we had no market. Now we are at peace because we trust that Winnaz will buy our produce. Since they started buying our potatoes, we have been able to build good houses, pay for our children's education, and our women have even started organizing themselves into savings cooperatives.", image: client3 },
+    { name: "Uwimana Claudine", role: "Farmer", text: "Winnaz has made farmers feel valued. Now that we are trained on how to farm properly, we get good seeds, and the money we earn allows us to live well. Now, agriculture is not a job for the unemployed; it is a job, it is a source of development.", image: client4 },
   ];
 
   // Detect small screens
