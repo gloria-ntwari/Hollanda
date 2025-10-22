@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import heroVideo from "@/assets/Untitled video - Made with Clipchamp.mp4";
+import heroVideo from "/Untitled video - Made with Clipchamp.mp4";
 
 const HeroSection = () => {
   const [ref, inView] = useInView({
