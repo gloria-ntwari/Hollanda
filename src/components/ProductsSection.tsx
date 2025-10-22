@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import productWinnaz from "../assets/WhatsApp Image 2025-10-20 at 3.22.04 PM.jpeg";
 import tsinda from "../assets/WhatsApp_Image_2025-10-20_at_1.32.40_PM-removebg-preview.png";
-import productWheeliez from "../assets/image 1.png";
+import productWheeliez from "../assets/WhatsApp_Image_2025-10-22_at_4.55.22_PM-removebg-preview.png";
 import winnaz from "../assets/Mask group.png";
 import wheeliez from "../assets/Clip path group.png";
 
@@ -99,7 +99,7 @@ const ProductsSection = () => {
             <img
               src={productWinnaz}
               alt="Winnaz Products"
-              className="w-full h-[500px] rounded-3xl shadow-2xl"
+              className="w-full h-auto rounded-3xl shadow-2xl"
             />
           </motion.div>
         </div>

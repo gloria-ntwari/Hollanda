@@ -17,6 +17,11 @@ const TestimonialsSection = () => {
     { name: "Kwizera David", role: "Food Enthusiast", text: "Between meetings and errands, Winnaz Chips keep me fueled throughout the day. They're not just a  snack—they're my little pick-me-up when I need it most." },
     { name: "Ishimwe Andy", role: "Winnaz consumer", text: "Winnaz Chips are my secret weapon for hosting! Whenever I bring them out, my guests can't stop talking about how tasty they are. They're always a crowd-pleaser." },
     { name: "Gisubizo James", role: "Winnaz Customer", text: "As someone who cares about eating natural foods, Winnaz Chips are a lifesaver! They're made from real ingredients and still taste amazing." },
+    { name:"Niyibizi Egide", role:"Head of Production, Hollanda Fairfoods", text:"Winnaz is a source of employment for over 60 people directly and over 450 indirectly. This gives hope that agriculture combined with industry can transform the economy of our regions."},
+    { name:"Uwanyirigira Clarisse", role:"Head of economic development in Musanze district", text:"Hollanda Fairfoods is a company that has made a difference in the lives of its people and has built a new image of how agriculture can develop the country."},
+    { name:"Nzabarinda Isaac",role:"Farmer",text:"Before, we used to grow potatoes and harvest them, but we had no market. Now we are at peace because we trust that Winnaz will buy our produce. Since they started buying our potatoes, we have been able to build good houses, pay for our children's education, and our women have even started organizing themselves into savings cooperatives."},
+    { name:"Uwimana Claudine",role:"Farmer",text:"Winnaz has made farmers feel valued. Now that we are trained on how to farm properly, we get good seeds, and the money we earn allows us to live well. Now, agriculture is not a job for the unemployed; it is a job, it is a source of development."},
+    { name:"Uwamariya Claire",role:"Winnaz Worker",text:"As a mother, working for Winnaz has helped me support my family. Another thing is that here they take care of us, and we are given training and safety equipment. I am proud to be part of the opportunity to work in a factory that processes products from our local potatoes in Musanze."}
   ];
 
   useEffect(() => {
