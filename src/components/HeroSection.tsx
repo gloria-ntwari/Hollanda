@@ -20,7 +20,7 @@ const HeroSection = () => {
         transition={{ duration: 1.5, ease: "easeInOut" }}
       >
         <video
-          src="/hero.mp4"
+          src="https://res.cloudinary.com/dikq9s0ny/video/upload/v1761161586/hero_fitfkn.mp4"
           className="w-full h-full object-cover"
           autoPlay
           muted
