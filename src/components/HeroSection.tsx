@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import heroVideo from "/Untitled video - Made with Clipchamp.mp4";
 
 const HeroSection = () => {
   const [ref, inView] = useInView({
@@ -21,12 +20,14 @@ const HeroSection = () => {
         transition={{ duration: 1.5, ease: "easeInOut" }}
       >
         <video
-          src={heroVideo}
+          src="/hero.mp4"
           className="w-full h-full object-cover"
           autoPlay
           muted
           loop
           playsInline
+          preload="metadata"
+          poster="/placeholder.svg"
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/40" />
