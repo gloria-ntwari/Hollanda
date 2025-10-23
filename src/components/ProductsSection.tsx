@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import productWinnaz from "../assets/WhatsApp Image 2025-10-20 at 3.22.04 PM.jpeg";
 import tsinda from "../assets/WhatsApp_Image_2025-10-20_at_1.32.40_PM-removebg-preview.png";
-import productWheeliez from "../assets/WhatsApp_Image_2025-10-22_at_4.55.22_PM-removebg-preview.png";
+import productWheeliez from "../assets/wheeliez_product.jpeg";
 import winnaz from "../assets/Mask group.png";
 import wheeliez from "../assets/Clip path group.png";
 
@@ -126,21 +126,21 @@ const ProductsSection = () => {
             className="order-1 lg:order-2"
           >
             <h3 className="text-3xl md:text-4xl font-bold mb-6 font-barlow">
-              WHEELIEZ - THE <span className="text-primary">STAR</span> OF
+              WHEELIEZ - THE <span className="text-primary">TASTE</span> OF
               <br />
-              EVERY PARTY!
+              ADVENTURE!
             </h3>
             <p className="text-muted-foreground mb-6 leading-relaxed font-barlow">
-              Golden, crunchy, and full of flavor. Winnaz is made from specially selected
-              potatoes and crafted to deliver a perfect bite every time.
+              Crunchy, playful, and packed with flavor. Wheeliez is made from the finest Rwandan potatoes, 
+              crafted to turn every bite into an adventure.
             </p>
-            <h4 className="text-xl font-bold mb-4 font-barlow">FROM FIELD TO PACK</h4>
+            <h4 className="text-xl font-bold mb-4 font-barlow">FROM FUN TO FLAVOUR</h4>
             <p className="text-muted-foreground mb-8 leading-relaxed font-barlow">
-              Each Winnaz crisp begins on a smallholder farm. Our agronomists work closely
-              with growers to improve yields and quality. We source potatoes that meet
-              strict standards, add slow, controlled frying, and finish each batch under
-              rigorous quality checks, so every bag carries the care of the farm and the
-              taste consumers love.
+              Each Wheeliez snack begins with a spark of creativity and a love for adventure.
+              Our team carefully selects the finest ingredients, blending bold flavors 
+              and perfect crunch to capture the spirit of play in every bite. Crafted 
+              with precision and passion in Rwanda, every pack of Wheeliez carries the 
+              thrill of discovery and the joy that keeps snack time exciting.
             </p>
             <Button className="bg-secondary hover:bg-secondary/90 text-white font-semibold group font-barlow">
               Visit Our Product
