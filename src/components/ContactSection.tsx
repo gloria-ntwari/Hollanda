@@ -11,11 +11,6 @@ const ContactSection = () => {
     threshold: 0.1,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-  };
-
   return (
     <section id="contact" className="section-padding bg-muted/30">
       <div className="container-custom">
@@ -101,32 +96,33 @@ const ContactSection = () => {
           >
             <div className="bg-card border rounded-3xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold mb-6 font-barlow">Write a message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form action="https://formspree.io/f/mqayvlnz" method="POST" className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-2 font-barlow">
                       First Name*
                     </label>
-                    <Input placeholder="Ange" required />
+                    <Input type="text" name="firstName" placeholder="Ange" required />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2 font-barlow">
                       Last Name*
                     </label>
-                    <Input placeholder="Ange" required />
+                    <Input type="text" name="lastName" placeholder="Ange" required />
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2 font-barlow">
                     Email*
                   </label>
-                  <Input type="email" placeholder="Ange" required />
+                  <Input type="email" name="email" placeholder="Ange" required />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2 font-barlow">
                     Message*
                   </label>
                   <Textarea
+                    name="message"
                     placeholder="Write down your message"
                     rows={5}
                     required
