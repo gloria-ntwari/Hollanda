@@ -24,9 +24,9 @@ const ContactSection = () => {
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 font-barlow">Contact us</h2>
             <p className="text-muted-foreground mb-8 md:mb-12 font-barlow">
-              Hello enter your details if u wanna contact us or even other thoing stay
+              We’d love to hear from you! Leave your details below if you have any inquiries, 
               <br></br>
-              Blessed
+              feedback, or simply want to connect with us. 
             </p>
 
             {/* Contact Information in 2x2 Grid Layout */}

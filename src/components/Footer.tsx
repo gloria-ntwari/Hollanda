@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import navImage from "../assets/Adobe Express - file 1.png";
+import navImage from "../assets/HFF_logo.png";
 import { Facebook, Instagram, Twitter, Linkedin, Youtube, MessageCircle } from "lucide-react";
 
 const Footer = () => {
