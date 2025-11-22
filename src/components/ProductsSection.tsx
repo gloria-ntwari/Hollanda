@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import productWinnaz from "../assets/WhatsApp Image 2025-10-20 at 3.22.04 PM.jpeg";
 import tsinda from "../assets/WhatsApp_Image_2025-10-20_at_1.32.40_PM-removebg-preview.png";
-import productWheeliez from "../assets/wheeliez_product.jpeg";
+import productWheeliez from "../assets/wheeliz.jpeg";
 import winnaz from "../assets/Mask group.png";
 import wheeliez from "../assets/Clip path group.png";
 
