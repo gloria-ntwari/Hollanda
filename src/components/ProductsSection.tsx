@@ -8,7 +8,7 @@ import productWheeliez from "../assets/wheeliez.jpeg";
 import winnaz from "../assets/Mask group.png";
 import wheeliez from "../assets/Clip path group.png";
 import productTsinda from "../assets/tsinda.jpg";
-import tsindaWinnaz from "../assets/hero.jpg";      
+import tsindaWinnaz from "../assets/hero.jpg";
 
 
 const ProductsSection = () => {
@@ -87,10 +87,16 @@ const ProductsSection = () => {
               rigorous quality checks, so every bag carries the care of the farm and the
               taste consumers love.
             </p>
-            <Button className="bg-secondary hover:bg-secondary/90 text-white font-semibold group font-barlow">
-              Visit Our Product
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <a
+              href="https://winnazworld.com/contact.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-secondary hover:bg-secondary/90 text-white font-semibold group font-barlow">
+                Visit Our Product
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
           </motion.div>
 
           <motion.div
@@ -133,15 +139,15 @@ const ProductsSection = () => {
               ADVENTURE!
             </h3>
             <p className="text-muted-foreground mb-6 leading-relaxed font-barlow">
-              Crunchy, playful, and packed with flavor. Wheeliez is made from the finest Rwandan potatoes, 
+              Crunchy, playful, and packed with flavor. Wheeliez is made from the finest Rwandan potatoes,
               crafted to turn every bite into an adventure.
             </p>
             <h4 className="text-xl font-bold mb-4 font-barlow">FROM FUN TO FLAVOUR</h4>
             <p className="text-muted-foreground mb-8 leading-relaxed font-barlow">
               Each Wheeliez snack begins with a spark of creativity and a love for adventure.
-              Our team carefully selects the finest ingredients, blending bold flavors 
-              and perfect crunch to capture the spirit of play in every bite. Crafted 
-              with precision and passion in Rwanda, every pack of Wheeliez carries the 
+              Our team carefully selects the finest ingredients, blending bold flavors
+              and perfect crunch to capture the spirit of play in every bite. Crafted
+              with precision and passion in Rwanda, every pack of Wheeliez carries the
               thrill of discovery and the joy that keeps snack time exciting.
             </p>
             <Button className="bg-secondary hover:bg-secondary/90 text-white font-semibold group font-barlow">
@@ -157,7 +163,7 @@ const ProductsSection = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-          
+
             <h3 className="text-3xl md:text-4xl font-bold mb-6 font-barlow">
               TSINDA - THE <span className="text-primary">CRUNCH</span> OF
               <br />
