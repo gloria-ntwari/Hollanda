@@ -188,16 +188,6 @@ const TeamSection = () => {
     },
   ];
 
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const scrollAmount = 320;
-      scrollRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
     <section className="section-padding bg-muted/30 overflow-hidden">
       <div className="container-custom">
@@ -220,61 +210,54 @@ const TeamSection = () => {
           </p>
         </motion.div>
 
-        {/* Navigation Buttons */}
-        <div className="flex justify-end gap-2 mb-6">
-          <button
-            onClick={() => scroll('left')}
-            className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow duration-300 group"
-          >
-            <ChevronLeft className="w-5 h-5 text-gray-600 group-hover:text-primary transition-colors" />
-          </button>
-          <button
-            onClick={() => scroll('right')}
-            className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow duration-300 group"
-          >
-            <ChevronRight className="w-5 h-5 text-gray-600 group-hover:text-primary transition-colors" />
-          </button>
-        </div>
-
-        {/* Scrollable Team Cards */}
+        {/* Auto-animating Team Cards */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          className="overflow-hidden pb-4"
         >
-          {teamMembers.map((member, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: 50 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="flex-shrink-0 group cursor-pointer"
-            >
-              <div className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 overflow-hidden w-72">
-                {/* Image Container with Orange Accent */}
-                <div className="relative overflow-hidden aspect-square">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover object-[center_20%] group-hover:grayscale-0 transition-all duration-500"
-                  />
-                  {/* Orange Accent Bar */}
-                  <div className="absolute bottom-0 left-0 right-0 h-2 bg-primary "></div>
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                {/* Content */}
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
-                    {member.name}
-                  </h3>
-                  <p className="text-primary font-semibold text-sm uppercase tracking-wide">
-                    {member.role}
-                  </p>
+          <motion.div
+            className="flex gap-6"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 40,
+                ease: "linear",
+              },
+            }}
+          >
+            {[...teamMembers, ...teamMembers].map((member, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 group cursor-pointer w-72"
+              >
+                <div className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 overflow-hidden w-72">
+                  {/* Image Container with Orange Accent */}
+                  <div className="relative overflow-hidden aspect-square">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover object-[center_20%] group-hover:grayscale-0 transition-all duration-500"
+                    />
+                    {/* Orange Accent Bar */}
+                    <div className="absolute bottom-0 left-0 right-0 h-2 bg-primary "></div>
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  {/* Content */}
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
+                      {member.name}
+                    </h3>
+                    <p className="text-primary font-semibold text-sm uppercase tracking-wide">
+                      {member.role}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </motion.div>
         </div>
 
         {/* Scroll Indicator */}

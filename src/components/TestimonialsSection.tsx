@@ -3,6 +3,9 @@ import { useInView } from "react-intersection-observer";
 import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import testimonialImage from "../assets/Rectangle 326 (1).png";
+import newTimesImage from "../assets/newTimes.jpeg";
+import odooImage from "../assets/Odoo.jpeg";
+import simbukaImage from "../assets/simbuka.jpeg";
 
 const TestimonialsSection = () => {
   const [ref, inView] = useInView({
@@ -14,15 +17,35 @@ const TestimonialsSection = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const testimonials = [
-    { name: "Mugisha Samuella", role: "Certified winnaz lover", text: "winnaz are made from fresh potatoes grown on the volcanic soils ofRwanda's Northern Region. We work closely together with Rwandan smallholder" },
-    { name: "Kwizera David", role: "Food Enthusiast", text: "Between meetings and errands, Winnaz Chips keep me fueled throughout the day. They're not just a  snack—they're my little pick-me-up when I need it most." },
-    { name: "Ishimwe Andy", role: "Winnaz consumer", text: "Winnaz Chips are my secret weapon for hosting! Whenever I bring them out, my guests can't stop talking about how tasty they are. They're always a crowd-pleaser." },
-    { name: "Gisubizo James", role: "Winnaz Customer", text: "As someone who cares about eating natural foods, Winnaz Chips are a lifesaver! They're made from real ingredients and still taste amazing." },
-    { name: "Niyibizi Egide", role: "Head of Production, Hollanda Fairfoods", text: "Winnaz is a source of employment for over 60 people directly and over 450 indirectly. This gives hope that agriculture combined with industry can transform the economy of our regions." },
-    { name: "Uwanyirigira Clarisse", role: "Head of economic development in Musanze district", text: "Hollanda Fairfoods is a company that has made a difference in the lives of its people and has built a new image of how agriculture can develop the country." },
-    { name: "Nzabarinda Isaac", role: "Farmer", text: "Before, we used to grow potatoes and harvest them, but we had no market. Now we are at peace because we trust that Winnaz will buy our produce. Since they started buying our potatoes, we have been able to build good houses, pay for our children's education, and our women have even started organizing themselves into savings cooperatives." },
-    { name: "Uwimana Claudine", role: "Farmer", text: "Winnaz has made farmers feel valued. Now that we are trained on how to farm properly, we get good seeds, and the money we earn allows us to live well. Now, agriculture is not a job for the unemployed; it is a job, it is a source of development." },
-    { name: "Uwamariya Claire", role: "Winnaz Worker", text: "As a mother, working for Winnaz has helped me support my family. Another thing is that here they take care of us, and we are given training and safety equipment. I am proud to be part of the opportunity to work in a factory that processes products from our local potatoes in Musanze." }
+    { name: "Mugisha Samuella", role: "Certified winnaz lover", text: "winnaz are made from fresh potatoes grown on the volcanic soils ofRwanda's Northern Region. We work closely together with Rwandan smallholder", image: testimonialImage },
+    { name: "Kwizera David", role: "Food Enthusiast", text: "Between meetings and errands, Winnaz Chips keep me fueled throughout the day. They're not just a  snack—they're my little pick-me-up when I need it most.", image: testimonialImage },
+    { name: "Ishimwe Andy", role: "Winnaz consumer", text: "Winnaz Chips are my secret weapon for hosting! Whenever I bring them out, my guests can't stop talking about how tasty they are. They're always a crowd-pleaser.", image: testimonialImage },
+    { name: "Gisubizo James", role: "Winnaz Customer", text: "As someone who cares about eating natural foods, Winnaz Chips are a lifesaver! They're made from real ingredients and still taste amazing.", image: testimonialImage },
+    { name: "Niyibizi Egide", role: "Head of Production, Hollanda Fairfoods", text: "Winnaz is a source of employment for over 60 people directly and over 450 indirectly. This gives hope that agriculture combined with industry can transform the economy of our regions.", image: testimonialImage },
+    { name: "Uwanyirigira Clarisse", role: "Head of economic development in Musanze district", text: "Hollanda Fairfoods is a company that has made a difference in the lives of its people and has built a new image of how agriculture can develop the country.", image: testimonialImage },
+    { name: "Nzabarinda Isaac", role: "Farmer", text: "Before, we used to grow potatoes and harvest them, but we had no market. Now we are at peace because we trust that Winnaz will buy our produce. Since they started buying our potatoes, we have been able to build good houses, pay for our children's education, and our women have even started organizing themselves into savings cooperatives.", image: testimonialImage },
+    { name: "Uwimana Claudine", role: "Farmer", text: "Winnaz has made farmers feel valued. Now that we are trained on how to farm properly, we get good seeds, and the money we earn allows us to live well. Now, agriculture is not a job for the unemployed; it is a job, it is a source of development.", image: testimonialImage },
+    { name: "Uwamariya Claire", role: "Winnaz Worker", text: "As a mother, working for Winnaz has helped me support my family. Another thing is that here they take care of us, and we are given training and safety equipment. I am proud to be part of the opportunity to work in a factory that processes products from our local potatoes in Musanze.", image: testimonialImage },
+
+    // Special media/partner testimonials without role subtitle
+    {
+      name: "The New Times",
+      role: "",
+      text: "Winnaz has gone beyond snack production; it has reshaped Rwanda’s potato value chain. The company introduced a new potato seed variety called “Itsinzi,” meaning winning, symbolising both agricultural innovation and the spirit behind the brand name Winnaz derived from winners.",
+      image: newTimesImage,
+    },
+    {
+      name: "Odoo",
+      role: "",
+      text: "Hollanda Fairfoods partners with Rwandan smallholder farmers to produce high-quality potato crisps, branded as Winnaz, which are sold across East Africa, including Rwanda, Uganda, and Kenya. Through agronomy support and market access, they help improve crop yield and quality for local farmers while bringing local, premium snacks to regional shelves.",
+      image: odooImage,
+    },
+    {
+      name: "Simbuka",
+      role: "",
+      text: "At Simbuka, we’re proud to join hands with Hollanda FairFoods , Holland Greentech, VDS-Acampo, AGRISEED LTD and TRAIDE Foundation in this transformative initiative. Together, we are empowering Rwanda’s potato farmers by providing quality Dutch variety seeds, delivering Good Agricultural Practices training, and building digital solutions to enhance access to finance.",
+      image: simbukaImage,
+    },
   ];
 
   useEffect(() => {
@@ -120,7 +143,7 @@ const TestimonialsSection = () => {
                   {/* Profile Info */}
                   <div className="flex items-center justify-center gap-4 mb-6">
                     <img
-                      src={testimonialImage}
+                      src={testimonial.image || testimonialImage}
                       alt={testimonial.name}
                       className="w-12 h-12 rounded-full object-cover flex-shrink-0"
                     />
@@ -128,9 +151,11 @@ const TestimonialsSection = () => {
                       <h3 className="font-bold text-base font-barlow text-black">
                         {testimonial.name}
                       </h3>
-                      <p className="text-sm font-barlow text-black">
-                        {testimonial.role}
-                      </p>
+                      {testimonial.role && (
+                        <p className="text-sm font-barlow text-black">
+                          {testimonial.role}
+                        </p>
+                      )}
                     </div>
                   </div>
 

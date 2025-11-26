@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import navImage from "../assets/HFF_logo.png"
+import navImage from "../assets/HFF_logo.png";
+import anniversaryLogo from "../assets/winnaz 10yearsstuff.svg";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,7 +61,7 @@ const Navigation = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-5"
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20 ">
+        <div className="relative flex items-center justify-between h-20 ">
           {/* Logo */}
           <a href="#home" className="flex items-center space-x-2">
             <div className="items-center justify-center">
@@ -68,6 +69,15 @@ const Navigation = () => {
                 src={navImage}
                 alt="logo"
                 className="h-10 md:h-14 lg:h-18 w-auto object-contain"
+              />
+            </div>
+
+            {/* Centered Anniversary Logo (All screen sizes) */}
+            <div className="absolute left-1/2 -translate-x-1/2 block">
+              <img
+                src={anniversaryLogo}
+                alt="Winnaz 10 Years"
+                className="h-14 md:h-14 lg:h-[75px] w-auto object-contain"
               />
             </div>
           </a>

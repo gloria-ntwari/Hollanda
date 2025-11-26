@@ -36,7 +36,7 @@ const ContactSection = () => {
                 <h3 className="font-bold font-barlow text-lg mb-4">Email</h3>
                 <div className="space-y-1">
                   <p className="text-muted-foreground font-barlow">
-                    customerservice@hollandafairfoods.com
+                    info@hollandafairfoods.com
                   </p>
                   <p className="text-muted-foreground font-barlow">
                     
