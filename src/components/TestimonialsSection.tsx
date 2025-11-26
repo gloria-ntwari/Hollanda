@@ -2,7 +2,16 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import testimonialImage from "../assets/Rectangle 326 (1).png";
+import image1 from "../assets/female1.jpg";
+import image2 from "../assets/male1.jpg";
+import image3 from "../assets/female2.avif";
+import image4 from "../assets/male2.jpg";
+import image5 from "../assets/female3.webp";
+import image6 from "../assets/male3.avif";
+import image7 from "../assets/female4.png";
+import image8 from "../assets/male4.jfif";
+import image9 from "../assets/male4.webp";
+
 import newTimesImage from "../assets/newTimes.jpeg";
 import odooImage from "../assets/Odoo.jpeg";
 import simbukaImage from "../assets/simbuka.jpeg";
@@ -17,15 +26,15 @@ const TestimonialsSection = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const testimonials = [
-    { name: "Mugisha Samuella", role: "Certified winnaz lover", text: "winnaz are made from fresh potatoes grown on the volcanic soils ofRwanda's Northern Region. We work closely together with Rwandan smallholder", image: testimonialImage },
-    { name: "Kwizera David", role: "Food Enthusiast", text: "Between meetings and errands, Winnaz Chips keep me fueled throughout the day. They're not just a  snack—they're my little pick-me-up when I need it most.", image: testimonialImage },
-    { name: "Ishimwe Andy", role: "Winnaz consumer", text: "Winnaz Chips are my secret weapon for hosting! Whenever I bring them out, my guests can't stop talking about how tasty they are. They're always a crowd-pleaser.", image: testimonialImage },
-    { name: "Gisubizo James", role: "Winnaz Customer", text: "As someone who cares about eating natural foods, Winnaz Chips are a lifesaver! They're made from real ingredients and still taste amazing.", image: testimonialImage },
-    { name: "Niyibizi Egide", role: "Head of Production, Hollanda Fairfoods", text: "Winnaz is a source of employment for over 60 people directly and over 450 indirectly. This gives hope that agriculture combined with industry can transform the economy of our regions.", image: testimonialImage },
-    { name: "Uwanyirigira Clarisse", role: "Head of economic development in Musanze district", text: "Hollanda Fairfoods is a company that has made a difference in the lives of its people and has built a new image of how agriculture can develop the country.", image: testimonialImage },
-    { name: "Nzabarinda Isaac", role: "Farmer", text: "Before, we used to grow potatoes and harvest them, but we had no market. Now we are at peace because we trust that Winnaz will buy our produce. Since they started buying our potatoes, we have been able to build good houses, pay for our children's education, and our women have even started organizing themselves into savings cooperatives.", image: testimonialImage },
-    { name: "Uwimana Claudine", role: "Farmer", text: "Winnaz has made farmers feel valued. Now that we are trained on how to farm properly, we get good seeds, and the money we earn allows us to live well. Now, agriculture is not a job for the unemployed; it is a job, it is a source of development.", image: testimonialImage },
-    { name: "Uwamariya Claire", role: "Winnaz Worker", text: "As a mother, working for Winnaz has helped me support my family. Another thing is that here they take care of us, and we are given training and safety equipment. I am proud to be part of the opportunity to work in a factory that processes products from our local potatoes in Musanze.", image: testimonialImage },
+    { name: "Mugisha Samuella", role: "Certified winnaz lover", text: "winnaz are made from fresh potatoes grown on the volcanic soils ofRwanda's Northern Region. We work closely together with Rwandan smallholder", image: image1 },
+    { name: "Kwizera David", role: "Food Enthusiast", text: "Between meetings and errands, Winnaz Chips keep me fueled throughout the day. They're not just a  snack—they're my little pick-me-up when I need it most.", image: image2 },
+    { name: "Ishimwe Andy", role: "Winnaz consumer", text: "Winnaz Chips are my secret weapon for hosting! Whenever I bring them out, my guests can't stop talking about how tasty they are. They're always a crowd-pleaser.", image: image4 },
+    { name: "Gisubizo James", role: "Winnaz Customer", text: "As someone who cares about eating natural foods, Winnaz Chips are a lifesaver! They're made from real ingredients and still taste amazing.", image:image6 },
+    { name: "Niyibizi Egide", role: "Head of Production, Hollanda Fairfoods", text: "Winnaz is a source of employment for over 60 people directly and over 450 indirectly. This gives hope that agriculture combined with industry can transform the economy of our regions.", image: image8 },
+    { name: "Uwanyirigira Clarisse", role: "Head of economic development in Musanze district", text: "Hollanda Fairfoods is a company that has made a difference in the lives of its people and has built a new image of how agriculture can develop the country.", image: image3 },
+    { name: "Nzabarinda Isaac", role: "Farmer", text: "Before, we used to grow potatoes and harvest them, but we had no market. Now we are at peace because we trust that Winnaz will buy our produce. Since they started buying our potatoes, we have been able to build good houses, pay for our children's education, and our women have even started organizing themselves into savings cooperatives.", image: image9 },
+    { name: "Uwimana Claudine", role: "Farmer", text: "Winnaz has made farmers feel valued. Now that we are trained on how to farm properly, we get good seeds, and the money we earn allows us to live well. Now, agriculture is not a job for the unemployed; it is a job, it is a source of development.", image: image5 },
+    { name: "Uwamariya Claire", role: "Winnaz Worker", text: "As a mother, working for Winnaz has helped me support my family. Another thing is that here they take care of us, and we are given training and safety equipment. I am proud to be part of the opportunity to work in a factory that processes products from our local potatoes in Musanze.", image: image7 },
 
     // Special media/partner testimonials without role subtitle
     {
@@ -143,7 +152,7 @@ const TestimonialsSection = () => {
                   {/* Profile Info */}
                   <div className="flex items-center justify-center gap-4 mb-6">
                     <img
-                      src={testimonial.image || testimonialImage}
+                      src={testimonial.image }
                       alt={testimonial.name}
                       className="w-12 h-12 rounded-full object-cover flex-shrink-0"
                     />
